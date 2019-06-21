@@ -22,10 +22,10 @@ public class MergeVideoMp3 {
 		command.add(ffmpegEXE);
 		
 		command.add("-i");
-		command.add(videoInputPath);
+		command.add(mp3InputPath);
 		
 		command.add("-i");
-		command.add(mp3InputPath);
+		command.add(videoInputPath);
 		
 		command.add("-t");
 		command.add(String.valueOf(seconds));
@@ -61,9 +61,9 @@ public class MergeVideoMp3 {
 	}
 
 	public static void main(String[] args) {
-		MergeVideoMp3 ffmpeg = new MergeVideoMp3("C:\\ffmpeg\\bin\\ffmpeg.exe");
+		MergeVideoMp3 ffmpeg = new MergeVideoMp3("F:\\Install\\ffmpeg\\ffmpeg\\bin\\ffmpeg.exe");
 		try {
-			ffmpeg.convertor("C:\\苏州大裤衩.mp4", "C:\\music.mp3", 7.1, "C:\\这是通过java生产的视频.mp4");
+			ffmpeg.convertor("F:\\imooc_videos_dev\\190618GYX00D0Z2W\\video\\wx742336ff52b1ed29.o6zAJs6pcFvB8t_6EmF5GkXL9-zI.bPZ70euc7pWib5a163fbc03be4ef96d211988b21903f.mp4", "F:\\imooc_videos_dev\\190618GYX00D0Z2W\\bgm\\0.mp3", 5, "F:\\这是通过java生产的视频.mp4");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

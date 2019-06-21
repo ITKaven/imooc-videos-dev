@@ -9,9 +9,9 @@
 	</parent>
 
 	<!-- 打包成war -->
-	<packaging>war</packaging>
+	<!--<packaging>war</packaging>-->
 	<!-- 默认 -->
-<!-- 	<packaging>jar</packaging> -->
+ 	<packaging>jar</packaging>
 
 	<artifactId>imooc-videos-dev-mini-api</artifactId>
 	<dependencies>
@@ -22,10 +22,28 @@
 		</dependency>
 
 		<!-- 添加依赖，为了打包成war -->
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-			<scope>provided</scope>
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>javax.servlet</groupId>-->
+			<!--<artifactId>javax.servlet-api</artifactId>-->
+			<!--<scope>provided</scope>-->
+		<!--</dependency>-->
 	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<mainClass>com.imooc.Application</mainClass>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 </project>

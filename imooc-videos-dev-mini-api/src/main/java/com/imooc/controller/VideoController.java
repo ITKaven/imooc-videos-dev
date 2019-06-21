@@ -130,7 +130,9 @@ public class VideoController extends BasicController {
 		if (StringUtils.isNotBlank(bgmId)) {
 			Bgm bgm = bgmService.queryBgmById(bgmId);
 			String mp3InputPath = FILE_SPACE + bgm.getPath();
-			
+
+			System.out.println(mp3InputPath);
+
 			MergeVideoMp3 tool = new MergeVideoMp3(FFMPEG_EXE);
 			String videoInputPath = finalVideoPath;
 			
